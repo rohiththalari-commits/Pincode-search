@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <meta
           name="google-site-verification"
-          content="PASTE_YOUR_GOOGLE_CODE_HERE"
+          content="abc123XYZ456"
         />
       </Head>
       <body>
