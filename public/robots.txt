@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pincode-search-kohl.vercel.app/sitemap.xml
