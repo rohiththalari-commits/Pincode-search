@@ -3,7 +3,8 @@ export async function getServerSideProps({ res }) {
 
   for (let i = 500001; i <= 500050; i++) {
     urls += `<url>
-      <loc>https://yourdomain.com/pincode/${i}</loc>
+      <loc><loc>https://pincode-search-kohl.vercel.app/pincode/500001</loc>
+}</loc>
     </url>`;
   }
 
