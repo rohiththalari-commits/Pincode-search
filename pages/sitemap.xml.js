@@ -1,22 +1,22 @@
-export async function getServerSideProps({ res }) {
-  let urls = "";
+export async function GET() {
+  let urls = '';
 
-  for (let i = 500001; i <= 500050; i++) {
-    urls += `<url>
-      <loc>https://pincode-search-kohl.vercel.app/pincode/${i}</loc>
-    </url>`;
+  for (let i = 1; i <= 50000; i++) {
+    urls += `
+      <url>
+        <loc>https://pincode-search-kohl.vercel.app/pincode/${i}</loc>
+      </url>`;
   }
 
-  res.setHeader("Content-Type", "text/xml");
-  res.write(`<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${urls}
-  </urlset>`);
-  res.end();
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>`;
 
-  return { props: {} };
+  return new Response(sitemap, {
+    headers: {
+      'Content-Type': 'pages/xml',
+    },
+  });
 }
 
-export default function Sitemap() {
-  return null;
-}
